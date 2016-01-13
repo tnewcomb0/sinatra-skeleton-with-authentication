@@ -3,7 +3,7 @@
   <form class="form-horizontal" action="/users/new" method="POST">
   <fieldset>
   <!-- Form Name -->
-  <legend>New User Registration</legend>
+  <legend class="form-group">New User Registration</legend>
   <% if @errors %>
     <div class="errors-wrapper">
       <span>Login failed:</span>
@@ -16,16 +16,9 @@
   <% end %>
   <!-- Text input-->
   <div class="form-group">
-    <label class="col-md-4 control-label" for="first_name">First Name</label>
+    <label class="col-md-4 control-label" for="username">Username</label>
     <div class="col-md-4">
-    <input id="first_name" name="first_name" type="text" value="<%= @user.try(:first_name) %>" class="form-control input-md" required="">
-    </div>
-  </div>
-  <br>
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="last_name">Last Name</label>
-    <div class="col-md-4">
-    <input id="last_name" name="last_name" type="text" value="<%= @user.try(:last_name) %>" class="form-control input-md" required="">
+    <input id="username" name="username" type="text" value="<%= @user.try(:username) %>" class="form-control input-md" required="">
     </div>
   </div>
   <br>
@@ -33,7 +26,7 @@
   <div class="form-group">
     <label class="col-md-4 control-label" for="email">Email Address</label>
     <div class="col-md-4">
-    <input id="email" name="email" type="email" value="<%= @user.try(:email) %>" class="form-control input-md" required="">
+    <input id="email" name="email" type="email" placeholder="example@gmail.com" value="<%= @user.try(:email) %>" class="form-control input-md" required="">
     </div>
   </div>
   <br>
@@ -41,7 +34,7 @@
   <div class="form-group">
     <label class="col-md-4 control-label" for="password_plaintext">Password</label>
     <div class="col-md-4">
-      <input id="password_plaintext" name="password_plaintext" type="password" class="form-control input-md" required="">
+      <input id="password_plaintext" name="password_plaintext" placeholder="*******" type="password" class="form-control input-md" required="">
     </div>
   </div>
   <br>
